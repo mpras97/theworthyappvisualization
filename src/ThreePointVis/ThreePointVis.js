@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Canvas } from 'react-three-fiber';
 import Controls from './Controls';
 import InstancedPoints from './InstancedPoints';
+import Effects from './Effects';
 
 const ThreePointVis = ({ data, layout, selectedPoint, setSelectedPoint }) => {
   return (
