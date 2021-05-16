@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ThreePointVis from './ThreePointVis/ThreePointVis';
 import './styles.css';
+import UIControls from './UIControls';
 
 // The data will be replaced by our requirement
 // This is a 1D data to be changed to 2D depending upon categories
@@ -21,25 +22,11 @@ export default function App() {
           setSelectedPoint={setSelectedPoint}
         />
       </div>
-      <div className="controls">
-        <strong>Layouts</strong>{' '}
-        <button
-          onClick={() => setLayout('grid')}
-          className={layout === 'grid' ? 'active' : undefined}
-        >
-          Grid
-        </button>
-        <button
-          onClick={() => setLayout('spiral')}
-          className={layout === 'spiral' ? 'active' : undefined}
-        >
-          Spiral
-        </button>
-        {selectedPoint && (
-        	<div className="selected-point">
-        	    You selected <strong>{selectedPoint.id}</strong>
-        	</div>)}
-      </div>
+      <UIControls
+        layout={layout}
+        selectedPoint={selectedPoint}
+        setLayout={setLayout}
+      />
     </div>
   );
 }
