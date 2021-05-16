@@ -23,6 +23,11 @@ function updateInstancedMeshMatrices({ mesh, data }) {
 
 const SELECTED_COLOR = '#6f6';
 const DEFAULT_COLOR = '#fff';
+const COLORS_1 = '#293241'
+const COLORS_2 = '#ee6c4d'
+const COLORS_3 = '#e0fbfc'
+const COLORS_4 = '#98c1d9'
+const COLORS_5 = '#3d5a80'
 
 // re-use for instance computations
 const scratchColor = new THREE.Color();
@@ -37,7 +42,7 @@ const usePointColors = ({ data, selectedPoint }) => {
   React.useEffect(() => {
     for (let i = 0; i < data.length; ++i) {
       scratchColor.set(
-        data[i] === selectedPoint ? SELECTED_COLOR : DEFAULT_COLOR
+        data[i] === selectedPoint ? SELECTED_COLOR : data[i].class === 0 ? COLORS_5 : data[i].class === 1 ? COLORS_4 : data[i].class === 2 ? COLORS_3 : data[i].class === 3 ? COLORS_2 : data[i].class === 4 ? COLORS_1 : DEFAULT_COLOR
       );
       scratchColor.toArray(colorArray, i * 3);
     }

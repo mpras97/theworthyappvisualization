@@ -33,7 +33,22 @@ function spiralLayout(data) {
 
 // We modify the data to show as classified categories
 function twitterLayout(data) {
+  const numOfClasses = 5
 
+  // for (let i = 0; i < numOfClasses; i++) {
+
+  // }
+  for (let i= 0; i < data.length; ++i) {
+    const datum = data[i]
+    const thetastart = datum.class * Math.PI * 2 / numOfClasses + Math.PI * 10/180
+    const thetaend = (datum.class + 1) * Math.PI * 2 / numOfClasses - Math.PI * 10/180
+
+    const randomTheta = Math.random() * (thetaend - thetastart) + thetastart
+
+    datum.x = Math.cos(randomTheta) * datum.distanceFromLoc
+    datum.y = Math.sin(randomTheta) * datum.distanceFromLoc
+    datum.z = 0
+  }
 }
 
 export const useLayout = ({ data, layout = 'grid' }) => {
@@ -41,6 +56,9 @@ export const useLayout = ({ data, layout = 'grid' }) => {
     switch (layout) {
       case 'spiral':
         spiralLayout(data);
+        break;
+      case 'twitter':
+        twitterLayout(data);
         break;
       case 'grid':
       default: {
