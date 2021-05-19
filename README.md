@@ -7,3 +7,5 @@ For example, for an article titled "Oxygen", should we use #Oxygen #Plasma or #V
 
 The goal is to get maximum number of visitors to visit the article page once we publish and tweet about it.
 
+
+mayank please see https://github.com/sevans09/covid-movement-vis
