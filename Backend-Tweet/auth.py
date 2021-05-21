@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-"""Python inteerface to access twitter api."""
+"""Python interface to access twitter api."""
 from future.standard_library import install_aliases # To clear the python2/python3 dependancy.
 install_aliases()
 
